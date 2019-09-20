@@ -1,32 +1,50 @@
+
+/* Trevor Tang
+ * CS 211
+ * September 22, 2019
+ * Reason: Homework assignment to strengthen understanding of chapter 9 
+ */
+
 import java.util.Scanner;
 
 public class Client {
 	public static void main(String[] args) {
+
+		// Variables used throughout client code
 		String userAnswer; // For user input
 		boolean shopping = true, discountCustomer = false; // shopping determines if program quits or not, discountCustomer determines if customer is preferred
-		double itemDiscountPercent = 0.20, itemDiscount = 0, itemDiscountTotal = 0; // Discount Trackers
-		GroceryBill bill; // Constructs a default bill
-		Scanner input = new Scanner(System.in);
+		double itemDiscountPercent = 0.20; // EDIT THIS TO CHANGE THE DISCOUNT (IN DECIMAL FORM)
+		double itemDiscount = 0, itemDiscountTotal = 0; // Discount Trackers
+		GroceryBill bill; // Declares a default bill
+		Scanner input = new Scanner(System.in); // Used to store user input
+		Employee clerk = new Employee("Trevor");
+
+		// Code that determines if a customer is preferred or not
 		System.out.println("Welcome to my store!");
 		System.out.println("Are you a preferred customer? 'Y' or 'N'");
 		userAnswer = input.nextLine();
 		if (userAnswer.equalsIgnoreCase("Y")) { // If the user is a preferred customer
-			bill = new DiscountBill("Trevor", true);
+			bill = new DiscountBill(clerk, true);
 			discountCustomer = true;
 			System.out.println("Nice! You get a " + (int) (itemDiscountPercent * 100) + "% discount off all items");
 		} else { // Not a preferred customer
-			bill = new GroceryBill("Trevor", false);
+			bill = new GroceryBill(clerk, false);
 		}
+
+		// User Prompts
 		while (shopping) {
 			System.out.println("\nWhat would you like to do? (Type #)");
 			System.out.println("1. Add an item to the bill");
-			System.out.println("2. Get the total of all items on bill");
+			System.out.println("2. Get the total of all items on bill currently");
 			System.out.println("3. Print your receipt! (Done shopping)");
 			if (discountCustomer) { // If they are discount customer they can check their percentage discount
 				System.out.println("4. What is the percentage discount on my bill total?");
 			}
-			userAnswer = input.nextLine();
-			if (userAnswer.equals("1")) { // Option 1: Add an item to bill
+			userAnswer = input.next();
+			input.nextLine();
+
+			// Option 1: Add an item to bill
+			if (userAnswer.equals("1")) {
 				System.out.println("What is the name of the item?");
 				String itemname = input.nextLine();
 				System.out.println("What is the price of the item?");
@@ -38,25 +56,33 @@ public class Client {
 				Item item = new Item(itemname, itemprice, itemDiscount);
 				System.out.println("Adding item to bill...");
 				bill.add(item);
-			} else if (userAnswer.equals("2")) { // Option 2: Get total dollar amount of all items
-				System.out.println("Your total is: " + bill.getTotal());
 
-			} else if (userAnswer.equals("3")) { // Option 3: Print the receipt and terminate program
+				// Option 2: Get total dollar amount of all items
+			} else if (userAnswer.equals("2")) {
+				System.out.println("Your total is: $" + bill.getTotal());
+
+				// Option 3: Print the receipt and terminate program
+			} else if (userAnswer.equals("3")) {
 				double total = bill.getTotal();
-				System.out.println("Your receipt:");
+				System.out.println("Your receipt:\n");
 				bill.printReceipt(); // Prints receipt of items without without discounted total
-				System.out.println("\nYour total is: " + total);
 				if (discountCustomer) {
+					System.out.println("\nYour subtotal is: $" + total);
 					total -= itemDiscountTotal; // Subtracts the discounted total from the general total
-					System.out.println("Your discounts saving: " + itemDiscountTotal);
-					System.out.println("Your new total is: " + total);
-					System.out.println("You saved: " + (total - itemDiscountTotal));
+					System.out.println("Your discounts saving: $" + itemDiscountTotal);
+					// System.out.println("You saved: $" + (total - itemDiscountTotal));
 				}
+				System.out.println("\nYour total is: $" + total);
+				System.out.println("Your clerk today was " + clerk.getName());
 				System.out.println("\nThank you for shopping with us!");
 				shopping = false; // ENDS PROGRAM
-			} else if (userAnswer.equals("4") && discountCustomer == true) { // If the preferred customer wants to see his percentage discount
-				System.out.println("Your discount total of all items right now is: " + itemDiscountTotal);
-				System.out.println("This will take " + (int) (((DiscountBill) bill).getDiscountPercent() * 100) + "% off your total of " + bill.getTotal());
+
+				// OPTION 4: If the preferred customer wants to see his percentage discount
+			} else if (userAnswer.equals("4") && discountCustomer == true) {
+				System.out.println("Your discount total of all items right now is: $" + itemDiscountTotal);
+				System.out.println("This will take " + (int) (((DiscountBill) bill).getDiscountPercent() * 100) + "% off your total of $" + bill.getTotal());
+
+				// If the user enters an invalid command
 			} else {
 				System.out.println("Invalid command, try again");
 			}
