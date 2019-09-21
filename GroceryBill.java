@@ -24,10 +24,10 @@ public class GroceryBill {
 			System.out.println("Nothing purchased!\n");
 		} else {
 			for (Item item : bill) {
-				if (preferred) {
-					System.out.printf("%d. %s $%.2f (discount of $%.2f) off of $%.2f\n", counter, item.getItemName(), (item.getPrice() - item.getDiscount()), item.getDiscount(), item.getPrice());
+				if (preferred && item.getDiscount() > 0) {
+					System.out.printf("%d. %s $%.2f (%.2f%% discount of $%.2f) off of $%.2f\n", counter, item.getItemName(), (item.getPrice() - item.getDiscount()), item.getitemDiscountPercent(), item.getDiscount(), item.getPrice());
 				} else {
-					System.out.printf("%d. %s $%.2f", counter, item.getItemName(), item.getPrice());
+					System.out.printf("%d. %s $%.2f\n", counter, item.getItemName(), item.getPrice());
 				}
 				counter++;
 			}
