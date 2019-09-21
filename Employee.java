@@ -5,7 +5,7 @@ public class Employee {
 		this.name = name;
 	}
 
-	public String getName() {
+	public String getName() { // Gets the name of the employee
 		return this.name;
 	}
 }
