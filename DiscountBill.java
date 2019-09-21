@@ -22,7 +22,7 @@ public class DiscountBill extends GroceryBill {
 		return discountAmount;
 	}
 
-	public double getDiscountPercent() { // Divides the total discount amount by the total of every item in the undiscounted bill
+	public double getDiscountPercent() { // Divides the total discount amount by the total of every item without its discount in the bill
 		return getDiscountAmount() / super.getTotal();
 	}
 }
