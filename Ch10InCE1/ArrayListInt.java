@@ -12,7 +12,7 @@ public class ArrayListInt {
 	public static void main(String[] args) throws FileNotFoundException {
 		ArrayList<Integer> numbers = new ArrayList<Integer>();
 		Scanner input = new Scanner(new File("numbers.txt"));
-		while (input.hasNextInt()) {
+		while (input.hasNextInt()) { // Adds numbers to list
 			int n = input.nextInt();
 			numbers.add(n);
 		}
