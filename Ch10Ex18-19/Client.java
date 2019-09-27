@@ -6,7 +6,7 @@
 public class Client {
 	public static void main(String[] args) {
 
-		// EXERCISE 18 CODE
+		// --- EXERCISE 18 OUTPUT ---
 		System.out.println("EXERCISE 18");
 
 		Point p1 = new Point(1, 4);
@@ -29,7 +29,7 @@ public class Client {
 
 		System.out.println(getResults(p1, p2));
 
-		// EXERCISE 19 CODE
+		// --- EXERCISE 19 OUTPUT ---
 		System.out.println("\nEXERCISE 19");
 
 		TimeSpan time1 = new TimeSpan(3, 15);
@@ -50,8 +50,7 @@ public class Client {
 
 	public static String getResults(Point p1, Point p2) { // gets results for point objects
 		int compareToResult = p1.compareTo(p2);
-		System.out.println("\nComparing " + p1 + " to " + p2);
-		System.out.println("p1.compareTo(p2) returns " + compareToResult);
+		System.out.println("\nComparing " + p1 + " to " + p2 + " returns " + compareToResult);
 		if (compareToResult > 0) {
 			return p1 + " is greater than " + p2;
 		} else if (compareToResult < 0) {
@@ -63,8 +62,7 @@ public class Client {
 
 	public static String getResults(TimeSpan time1, TimeSpan time2) { // gets results for timespan objects
 		int compareToResult = time1.compareTo(time2);
-		System.out.println("\nComparing " + time1 + " to " + time2);
-		System.out.println("time1.compareTo(time2) returns " + compareToResult);
+		System.out.println("\nComparing " + time1 + " to " + time2 + " returns " + compareToResult);
 		if (compareToResult > 0) {
 			return time1 + " is greater than " + time2;
 		} else if (compareToResult < 0) {
@@ -74,4 +72,3 @@ public class Client {
 		}
 	}
 }
-
