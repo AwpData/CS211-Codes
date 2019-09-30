@@ -1,3 +1,9 @@
+/* Name: Trevor Tang
+ * Course: CS 211
+ * Date: September 27, 2019
+ * Reason: Homework assignment to enhance understanding of chapter 10
+ */
+
 // Represents a time span of hours and minutes elapsed.
 // Class invariant: minutes < 60
 
