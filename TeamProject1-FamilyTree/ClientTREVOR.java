@@ -65,7 +65,8 @@ public class Client {
 						System.out.println("\nFather:\n" + dataFamilyNames.get(j).getFather());
 						break;
 					} else if (j == dataFamilyNames.size() - 1) {
-						System.out.println("\nNo records of mother or father found for " + name);
+						System.out.println("\nMother: Unknown");
+						System.out.println("\nFather: Unknown");
 					}
 				}
 				System.out.println("\nChildren:");
@@ -75,7 +76,7 @@ public class Client {
 						numberOfChildren++;
 						System.out.println(dataFamilyNames.get(k).getPerson());
 					} else if (k == dataFamilyNames.size() - 1 && numberOfChildren == 0) {
-						System.out.println("No records of children found for " + name);
+						System.out.println("Unknown");
 					}
 				}
 				input.nextLine();
@@ -87,4 +88,3 @@ public class Client {
 		}
 	}
 }
-
