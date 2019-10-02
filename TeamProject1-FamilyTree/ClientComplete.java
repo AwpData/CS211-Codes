@@ -52,9 +52,12 @@ public class ClientComplete {
 				}
 
 			} else if (selection.equals("2")) {
-				System.out.print("What is the Person's name ");
+				for (int i = 0; i < names.size(); i++) {
+					System.out.println(names.get(i));
+				}
+				System.out.print("\nWhat is the Person's name?: ");
 				String name = input.nextLine(); // Gets the name of the family member
-				System.out.println("Person:\n" + name);
+				System.out.println("\nPerson:\n" + name);
 				for (int j = 0; j < people.size(); j++) {
 					if (people.get(j).getPerson().equalsIgnoreCase(name)) { // If the person exists...
 						System.out.println("\nMaternal line: ");
@@ -76,10 +79,7 @@ public class ClientComplete {
 				System.out.println("\nChildren:");
 				int numberOfChildren = 0;
 				for (int k = 0; k < people.size(); k++) {
-					if (people.get(k).getFather().equalsIgnoreCase(name)) { // If the person is their father
-						numberOfChildren++;
-						System.out.println(people.get(k).getPerson());
-					} else if (people.get(k).getMother().equalsIgnoreCase(name)) { // If the person is their mother
+					if (people.get(k).getMother().equalsIgnoreCase(name) || people.get(k).getFather().equalsIgnoreCase(name)) { // If the person is their father
 						numberOfChildren++;
 						System.out.println(people.get(k).getPerson());
 					} else if (k == people.size() - 1 && numberOfChildren == 0) { // If the person has no children
