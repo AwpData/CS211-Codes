@@ -18,10 +18,5 @@ public class Person {
 	
 	public String getFather() {
 		return this.father;
-	}
-	
-	public String toString() {
-		return this.getPerson();
-	}
-	
+	}	
 }
