@@ -37,7 +37,7 @@ public class CH11Ex11 {
 		Iterator<Integer> iteratorSet1 = set1.iterator(); // New iterator object for set1
 		while (iteratorSet1.hasNext()) {
 			int num = iteratorSet1.next(); // Gets the next num in set1
-			if (!set2.contains(num)) { // If set2 has the num
+			if (!set2.contains(num)) { // If set2 doesn't have this num in set1
 				newSet.add(num); // Add it to the new set
 			}
 		}
