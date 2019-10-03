@@ -1,3 +1,10 @@
+
+/* Name: Trevor Tang
+ * Course: CS 211
+ * Date: October 6, 2019 
+ * Reason: To enhance understanding of how set and iterators work in java  
+ */
+
 import java.util.*;
 
 public class CH11Ex11 {
