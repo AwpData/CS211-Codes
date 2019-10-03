@@ -86,7 +86,6 @@ public class ClientComplete {
 						System.out.println("Unknown");
 					}
 				}
-				input.nextLine();
 
 			} else if (selection.equals("3")) { // Quits the program
 				System.out.println("Quitting program...");
