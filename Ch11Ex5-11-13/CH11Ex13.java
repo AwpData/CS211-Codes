@@ -18,7 +18,7 @@ public class CH11Ex13 {
 	public static boolean isUnique(Map<String, String> map) {
 		ArrayList<String> compare = new ArrayList<>(); // Create a list so that the values can be compared later
 		for (String key : map.keySet()) {
-			compare.add(map.get(key)); // Adds every value to the list
+			compare.add(map.get(key)); // Adds every value to the list of each key
 		}
 		for (int i = 0; i < compare.size() - 1; i++) {
 			String focusedName = compare.get(i); // Gets the name
