@@ -1,3 +1,10 @@
+
+/* Name: Trevor Tang
+ * Course: CS 211
+ * Date: October 6, 2019 
+ * Reason: To enhance understanding of how maps work in java 
+ */
+
 import java.util.*;
 
 public class CH11Ex13 {
@@ -18,7 +25,7 @@ public class CH11Ex13 {
 	public static boolean isUnique(Map<String, String> map) {
 		ArrayList<String> compare = new ArrayList<>(); // Create a list so that the values can be compared later
 		for (String key : map.keySet()) {
-			compare.add(map.get(key)); // Adds every value to the list of each key
+			compare.add(map.get(key)); // Adds every value of each key to the list
 		}
 		for (int i = 0; i < compare.size() - 1; i++) {
 			String focusedName = compare.get(i); // Gets the name
