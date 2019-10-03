@@ -1,3 +1,9 @@
+/* Name: Trevor Tang
+ * Course: CS 211
+ * Date: October 6, 2019 
+ * Reason: To enhance understanding of how maps work in java 
+ */
+
 import java.util.*;
 
 public class CH11Ex05 {
@@ -9,7 +15,7 @@ public class CH11Ex05 {
 			numbers.add(num); // This is here so that the list has duplicates
 		}
 		System.out.println("Before sorting and with duplicates: " + numbers);
-		Set<Integer> sortedNumbers = sortAndRemoveDuplicates(numbers);
+		Set<Integer> sortedNumbers = sortAndRemoveDuplicates(numbers); // New set that is sorted and has all duplicates removed
 		System.out.println("After sorting and duplicates removed: " + sortedNumbers);
 	}
 
