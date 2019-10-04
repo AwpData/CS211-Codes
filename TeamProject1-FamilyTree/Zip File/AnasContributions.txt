@@ -1,0 +1,5 @@
+Anas Gherfal 
+
+We first did the person class then we did the client tester. 
+We communicated through canvas. Each one of us worked on different things. 
+Like for me I helped with the structures of the program, adding comments explaining the steps, and making sure the program compiled.
