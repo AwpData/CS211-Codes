@@ -1,10 +1,17 @@
+
+/* Names: Trevor Tang, Sudhanva Donakonda, Anas Gherfal, Hacer Aynur Sari
+ * Course: CS 211
+ * Date: October 4, 2019
+ * Reason: Prints family tree of inputted person from text file 
+ */
+
 import java.io.*;
 import java.util.*;
 
 public class ClientComplete {
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner input = new Scanner(System.in);
-		Scanner fileReader = new Scanner(new File("people.txt"));
+		Scanner fileReader = new Scanner(new File("src/people.txt"));
 		boolean programRunning = true;
 		ArrayList<String> names = new ArrayList<String>();
 		ArrayList<Person> familyStructures = new ArrayList<Person>();
@@ -55,7 +62,7 @@ public class ClientComplete {
 				for (int i = 0; i < names.size(); i++) {
 					System.out.println(names.get(i));
 				}
-				System.out.print("\nWhat is the person's name? (Make sure its spelt correctly!): ");
+				System.out.print("\nWhat is the Person's name? (Make sure its spelt correctly from the list): ");
 				String name = input.nextLine(); // Gets the name of the family member
 				System.out.println("\nPerson:\n" + name);
 				for (int j = 0; j < people.size(); j++) {
