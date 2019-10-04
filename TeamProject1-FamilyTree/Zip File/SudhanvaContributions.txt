@@ -1,0 +1,4 @@
+In team project 1 I helped read the file and put the names and family names in 2 separate lists. 
+I also created a list of persons using the list of family names. 
+Finally, I helped Trevor make the for loop which traces through the person objects to find mother, father and children of each person.
+On the side, I helped with little things like making sure program asked until user said quit.
