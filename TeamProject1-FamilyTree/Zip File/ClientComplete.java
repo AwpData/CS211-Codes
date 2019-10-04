@@ -4,7 +4,7 @@ import java.util.*;
 public class ClientComplete {
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner input = new Scanner(System.in);
-		Scanner fileReader = new Scanner(new File("src/people.txt")); // Remove src later!!!
+		Scanner fileReader = new Scanner(new File("people.txt"));
 		boolean programRunning = true;
 		ArrayList<String> names = new ArrayList<String>();
 		ArrayList<Person> familyStructures = new ArrayList<Person>();
@@ -55,7 +55,7 @@ public class ClientComplete {
 				for (int i = 0; i < names.size(); i++) {
 					System.out.println(names.get(i));
 				}
-				System.out.print("\nWhat is the Person's name?: ");
+				System.out.print("\nWhat is the person's name? (Make sure its spelt correctly!): ");
 				String name = input.nextLine(); // Gets the name of the family member
 				System.out.println("\nPerson:\n" + name);
 				for (int j = 0; j < people.size(); j++) {
