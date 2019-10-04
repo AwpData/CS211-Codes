@@ -1,7 +1,6 @@
 For this project, I was in charge of the user inputs as well as creating the overall process by which the names of each family member
 were divided into subgroups in order of the person, their mother, and their father. I also helped with the process of printing a
-person's family tree (consisting of who their mother, father, and children were) with Sudhanva. I am in charge of being team leader
-which means that I had to combine our codes into one nice suitable code while also turning in this ZIP file. 
+person's family tree (consisting of who their mother, father, and children were) with Sudhanva and create the Person's class with Hacer. I am in charge of being team leader which means that I had to combine our codes into one nice suitable code while also turning in this ZIP file. 
 
 The process of our code first consisted of the Person class. We created a constructor consisting of the person's name, their
 mother, and their father. After this the getter and setter methods were created to access these elements. Afterwards, 
@@ -10,4 +9,4 @@ difficult part as it required a lot of thinking and precise coding. We settled o
 desired person's name and get their mother and father with our getter methods in the person class. Then the hardest part came in,
 deciding how we were going to get that person's children if they had any. The method created was to compare every person in the arraylist
 to check if the desired person was the mother or father of that person. That way if they were, we could print that they were the child
-of that person. After that, we cleaned up the code, and added user inputs for a friendly user interface that is easy to use. 
+of that person. After that, we cleaned up the code, and added user inputs for a clean, friendly user interface that is easy to use. 
