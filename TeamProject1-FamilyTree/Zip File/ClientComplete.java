@@ -4,7 +4,7 @@ import java.util.*;
 public class ClientComplete {
 	public static void main(String[] args) throws FileNotFoundException {
 		Scanner input = new Scanner(System.in);
-		Scanner fileReader = new Scanner(new File("src/people.txt"));
+		Scanner fileReader = new Scanner(new File("src/people.txt")); // Remove src later!!!
 		boolean programRunning = true;
 		ArrayList<String> names = new ArrayList<String>();
 		ArrayList<Person> familyStructures = new ArrayList<Person>();
