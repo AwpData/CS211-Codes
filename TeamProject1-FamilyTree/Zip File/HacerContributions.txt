@@ -1,0 +1,2 @@
+In team project, I could not figure out how to make the for loop so I could not help that much, but my other teammates explained to me. 
+I helped the create the person class, Trevor also helped me to create the person class.
