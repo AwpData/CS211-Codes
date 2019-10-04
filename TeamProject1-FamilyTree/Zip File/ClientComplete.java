@@ -70,10 +70,10 @@ public class ClientComplete {
 					} else if (j == people.size() - 1) { // if the person has no record of a mother or father they are listed as unknown
 						System.out.println("\nMaternal line: ");
 						System.out.println("\t" + name);
-						System.out.println("\t\tunknown");
+						System.out.println("\t\tUnknown");
 						System.out.println("\nPaternal line: ");
 						System.out.println("\t" + name);
-						System.out.println("\t\tunknown");
+						System.out.println("\t\tUnknown");
 					}
 				}
 				System.out.println("\nChildren:");
