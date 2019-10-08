@@ -1,0 +1,4 @@
+The complexity class for this algorithm can be considered as O(N). This is because the for-loop goes through the list at a linear rate
+examining every element only once and executing each statement nested only once. Although there are 2 statements within the for-loop 
+making this algorithm O(2N), we round off to the nearest order of magnitude which is O(N) since every element is examined and each operation
+nested inside the for-loop is executed exactly once. 
