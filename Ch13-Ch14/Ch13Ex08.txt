@@ -36,3 +36,40 @@ After 8th pass: [8/, 18/, 27/, 36/, 45/, 54/, 63/, 72/]
 
 FINAL ARRAY FOR numbers1: [8, 18, 27, 36, 45, 54, 63, 72]
 
+--------------------------------------------------------------------------------------------
+
+numbers2 = [37, 29, 19, 48, 23, 55, 74, 12]
+
+During 1st pass: Comparing 37, Smallest number = 12, swap 37 and 12
+
+After 1st pass: [12/, 29, 19, 48, 23, 55, 74, 37]
+
+During 2nd pass: Comparing 29, Smallest number = 19, swap 29 and 19
+
+After 2nd pass: [12/, 19/, 29, 48, 23, 55, 74, 37]
+
+During 3rd pass: Comparing 29, Smallest number = 23, swap 29 and 23
+
+After 3rd pass: [12/, 19/, 23/, 48, 29, 55, 74, 37]
+
+During 4th pass: Comparing 48, Smallest number = 29, swap 48 and 29
+
+After 4th pass: [12/, 19/, 23/, 29/, 48, 55, 74, 37]
+
+During 5th pass: Comparing 48, Smallest number = 37, swap 48 and 37
+
+After 5th pass: [12/, 19/, 23/, 29/, 37/, 55, 74, 48]
+
+During 6th pass: Comparing 55, Smallest number = 48, swap 55 and 48
+
+After 6th pass: [12/, 19/, 23/, 29/, 37/, 48/, 74, 55]
+
+During 7th pass: Comparing 74, Smallest number = 55, swap 74 and 55
+
+After 7th pass: [12/, 19/, 23/, 29/, 37/, 48/, 55/, 74]
+
+During 8th pass: Comparing 74, Smallest number = 74, swap nothing
+
+After 8th pass: [12/, 19/, 23/, 29/, 37/, 48/, 55/, 74/]
+
+FINAL ARRAY FOR numbers2: [12, 19, 23, 29, 37, 48, 55, 74]
