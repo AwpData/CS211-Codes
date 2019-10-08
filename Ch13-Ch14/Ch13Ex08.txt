@@ -1,0 +1,38 @@
+*A "/" character notes that this part of the array has already been sorted
+
+numbers1 = [63, 8, 45, 72, 27, 18, 54, 36]
+
+During 1st pass: Comparing 63, Smallest number = 8, swap 63 and 8 
+
+After 1st pass: [8/, 63, 45, 72, 27, 18, 54, 36]
+            
+During 2nd pass: Comparing 63, Smallest number = 18, swap 63 and 18
+
+After 2nd pass: [8/, 18/, 45, 72, 27, 63, 54, 36]
+
+During 3rd pass: Comparing 45, Smallest number = 27, swap 45 and 27
+
+After 3rd pass: [8/, 18/, 27/, 72, 45, 63, 54, 36]
+
+During 4th pass: Comparing 72, Smallest number = 36, swap 72 and 36
+
+After 4th pass: [8/, 18/, 27/, 36/, 45, 63, 54, 72]
+
+During 5th pass: Comparing 45, Smallest number = 45, swap nothing
+
+After 5th pass: [8/, 18/, 27/, 36/, 45/, 63, 54, 72]
+
+During 6th pass: Comparing 63, Smallest number = 54, swap 63 and 54
+
+After 6th pass: [8/, 18/, 27/, 36/, 45/, 54/, 63, 72]
+
+During 7th pass: Comparing 63, Smallest number = 63, swap nothing
+
+After 7th pass: [8/, 18/, 27/, 36/, 45/, 54/, 63/, 72]
+
+During 8th pass: Comparing 72, Smallest number = 72, swap nothing
+
+After 8th pass: [8/, 18/, 27/, 36/, 45/, 54/, 63/, 72/]
+
+FINAL ARRAY FOR numbers1: [8, 18, 27, 36, 45, 54, 63, 72]
+
