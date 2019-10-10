@@ -43,11 +43,9 @@ public class Ch14Ex06 {
 			return true;
 		}
 		for (int i = 0; i < queueSize; i++) { // Adds the numbers from queue to temporary stack
-			int queueNum = q.remove();
-			tempStack.push(queueNum);
+			int queueNum = tempStack.push(q.remove());
 			q.add(queueNum);
 		}
-
 		for (int i = 0; i < queueSize; i++) {
 			int stackNum = tempStack.pop(); // Gets the last element in stack
 			int queueNum = q.remove(); // Gets the first element in queue
