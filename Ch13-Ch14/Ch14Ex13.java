@@ -29,7 +29,7 @@ public class Ch14Ex13 {
 		s.clear();
 
 		for (int i = 0; i <= 10; i++) {
-			s.push((int) ((int) 1 + Math.random() * 10)); // Adds random numbers to be expunged in stack
+			s.push((int) ((int) 1 + Math.random() * 100)); // Adds random numbers to be expunged in stack
 		}
 		System.out.println("\nBefore expunge: " + s);
 		s = expunge(s);
@@ -41,13 +41,12 @@ public class Ch14Ex13 {
 		if (s.size() < 2) {
 			return s;
 		}
-		int numCompare = s.pop(); // Sets the first number that will be compared
-		tempStack.push(numCompare); // We have to add the first number since every number after this added to the stack will be greater than this
+		int numCompare = tempStack.push(s.pop()); // We have to add the first number since every number after this added to the stack will be greater than this
 		while (!s.isEmpty()) { // While the original stack is not empty
 			int numSelected = s.pop(); // Gets the next number to be compared to numCompare
-			if (numSelected >= numCompare) { // If numSelected is greater than or equal to the compared number
-				tempStack.push(numSelected); // Push it onto our tempStack as this num selected is in increasing order
-				numCompare = numSelected; // Set numCompare to this number as the next number in stack to be compared has to be greater than this number to be in increasing order
+			if (numSelected >= numCompare) { // If numCompare is less than or equal to the next number in stack
+				numCompare = tempStack.push(numSelected); // Push it onto our tempStack as this num selected is in increasing order
+				// Set numCompare to this numSelected as the next number added to tempStack will be greater than it
 			}
 		}
 		return tempStack;
