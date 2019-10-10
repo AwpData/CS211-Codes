@@ -1,3 +1,7 @@
+Name: Trevor Tang
+Date: October 13, 2019
+Exericse 8, Chapter 13 
+
 *A "/" character notes that this part of the array has already been sorted
 
 numbers1 = [63, 8, 45, 72, 27, 18, 54, 36]
