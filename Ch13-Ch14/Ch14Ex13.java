@@ -45,7 +45,7 @@ public class Ch14Ex13 {
 		tempStack.push(numCompare); // We have to add the first number since every number after this added to the stack will be greater than this
 		while (!s.isEmpty()) { // While the original stack is not empty
 			int numSelected = s.pop(); // Gets the next number to be compared to numCompare
-			if (numSelected >= numCompare) { // If numCompare is less than or equal to the next number in stack
+			if (numSelected >= numCompare) { // If numSelected is greater than or equal to the compared number
 				tempStack.push(numSelected); // Push it onto our tempStack as this num selected is in increasing order
 				numCompare = numSelected; // Set numCompare to this number as the next number in stack to be compared has to be greater than this number to be in increasing order
 			}
