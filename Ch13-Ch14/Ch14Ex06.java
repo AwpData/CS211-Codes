@@ -58,6 +58,6 @@ public class Ch14Ex06 {
 			}
 
 		}
-		return false;
+		return false; // If the numbers read forward and backwards arn't the same, return false 
 	}
 }
