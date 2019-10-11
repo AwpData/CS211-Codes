@@ -38,7 +38,6 @@ public class Ch14Ex06 {
 	public static boolean isPalindrome(Queue<Integer> q) {
 		Stack<Integer> tempStack = new Stack<>(); // Our one auxilary stack storage unit
 		int queueSize = q.size();
-		int totalNumbers = 0; // Counter to keep track of how many numbers are palindromes
 		if (q.size() == 0) { // Since the book said that empty queues are palindromes
 			return true;
 		}
@@ -46,18 +45,16 @@ public class Ch14Ex06 {
 			int queueNum = tempStack.push(q.remove());
 			q.add(queueNum);
 		}
-		for (int i = 0; i < queueSize; i++) {
-			int stackNum = tempStack.pop(); // Gets the last element in stack
-			int queueNum = q.remove(); // Gets the first element in queue
-			q.add(queueNum); // Re-adds the queueNum so that the queue is in its original state
-			if (totalNumbers == queueSize - 1) { // This means that all the elements in stack are palindrome to queue
-				return true;
-			}
-			if (queueNum == stackNum) { // If the last element in stack = the first element in queue
-				totalNumbers++; // Add to totalNumbers which counts the numbers in palindrome pattern
-			}
 
+		boolean palindrome = true; // At this instance, the queue is a palindrome
+		while (!tempStack.isEmpty()) {
+			int stackNum = tempStack.pop(); // Pops the last element off stack
+			int queueNum = q.remove(); // Removes the first element in queue
+			q.add(queueNum); // Re-adds the queueNum so that the queue is in its original state
+			if (stackNum != queueNum) { // If these numbers arn't equal to each other (Since the numbers should be mirrored to each other in a palindrome)
+				palindrome = false; // Set palindrome to false (don't return as the queue won't be in original state)
+			}
 		}
-		return false; // If the numbers read forward and backwards arn't the same, return false 
+		return palindrome; // Returns whether this queue is a palindrome or not
 	}
 }
