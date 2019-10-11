@@ -49,6 +49,9 @@ public class Ch14Ex13 {
 				// Set numCompare to this numSelected as the next number added to tempStack will be greater than it
 			}
 		}
-		return tempStack;
+		while (!tempStack.isEmpty()) { // This code is here so that it reverses the list so that the output is the same as the exercise prompt
+			s.push(tempStack.pop());
+		}
+		return s;
 	}
 }
