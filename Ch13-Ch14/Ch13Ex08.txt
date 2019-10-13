@@ -26,7 +26,7 @@ During 5th pass: Comparing 45, Smallest number = 45, swap nothing
 
 After 5th pass: [8/, 18/, 27/, 36/, 45/, 63, 54, 72]
 
-During 6th pass: Comparing 63, Smallest number = 54, swap 63 and 54
+.During 6th pass: Comparing 63, Smallest number = 54, swap 63 and 54
 
 After 6th pass: [8/, 18/, 27/, 36/, 45/, 54/, 63, 72]
 
