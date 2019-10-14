@@ -19,8 +19,8 @@ public class Ch14Ex06 {
 			q.add(i);
 		}
 		System.out.println("Queue state before isPalidrome: " + q);
-		System.out.println("Queue state after isPalindrome: " + q);
 		System.out.println("isPalindrome returns: " + isPalindrome(q));
+		System.out.println("Queue state after isPalindrome: " + q);
 
 		q.clear();
 
@@ -29,8 +29,8 @@ public class Ch14Ex06 {
 			q.add((int) ((int) 1 + Math.random() * 100));
 		}
 		System.out.println("\nQueue state before isPalidrome: " + q);
-		System.out.println("Queue state after isPalindrome: " + q);
 		System.out.println("isPalindrome returns: " + isPalindrome(q));
+		System.out.println("Queue state after isPalindrome: " + q);
 
 	}
 
