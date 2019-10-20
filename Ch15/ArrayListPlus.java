@@ -7,7 +7,7 @@
 
 import java.util.*;
 
-public class ArrayListPlus<E> implements List<E> {
+public class ArrayListPlus<E> {
 
 	private E[] elementData; // list of type E
 	private int size; // current number of elements in the list
@@ -153,13 +153,15 @@ public class ArrayListPlus<E> implements List<E> {
 		}
 	}
 
+	// ---------- CHAPTER 15 EXERCISES ---------- //
+
 	// CHAPTER 15, EXERCISE 1
 	// post: returns the last index of where the given value is found, -1 if not found
-	public int lastIndexOf(E value) { // This accepts an integer parameter as stated in the exercise
+	public int lastIndexOf(E value) { // This accepts an integer parameter as stated in the exercise as well as all other object types
 		int index = -1;
 		for (int i = 0; i < size; i++) {
 			if (elementData[i].equals(value)) {
-				index = i;
+				index = i; // If the element at i is equal to our value then set the index to that value
 			}
 		}
 		return index;
@@ -172,8 +174,8 @@ public class ArrayListPlus<E> implements List<E> {
 		int counter = 0; // This keeps track if the numbers are in sequential order
 		ArrayListIterator<E> iteratorList1 = new ArrayListIterator<E>(this); // Create iterator on list1
 		ArrayListIterator<E> iteratorList2 = new ArrayListIterator<E>(L); // Create iterator on list2
-		E value1 = iteratorList1.next(); // GET VALUE OF LIST 1
-		E value2 = iteratorList2.next(); // GET VALUE OF LIST 2
+		E value1 = iteratorList1.next(); // GET FIRST VALUE IN LIST 1
+		E value2 = iteratorList2.next(); // GET FIRST VALUE IN LIST 2
 		while (iteratorList1.getPosition() != this.size() + 1) { // While the iterator on list1 is not beyond size
 			if (value1.equals(value2)) { // If the values equal each other
 				counter++;
@@ -231,7 +233,7 @@ public class ArrayListPlus<E> implements List<E> {
 		if (this.isEmpty()) {
 			throw new NoSuchElementException(); // If list is empty, throw no element exception
 		}
-		E value = elementData[size - 1];
+		E value = elementData[size - 1]; // Gets the last element to return
 		remove(size - 1);
 		return value;
 	}
