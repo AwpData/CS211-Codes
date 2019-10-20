@@ -30,7 +30,7 @@ public class Client {
 		a2.add(7);
 		System.out.println("ORIGINAL LIST: " + a);
 		System.out.println("SECOND LIST: " + a2.toString());
-		System.out.println("Index of a2: " + a.indexOfSubList(a2) + "\n");
+		System.out.println("Index of second list: " + a.indexOfSubList(a2) + "\n");
 		
 		a2.clear();
 		a2.add(7);
@@ -38,7 +38,7 @@ public class Client {
 		a2.add(39);
 		System.out.println("ORIGINAL LIST: " + a);
 		System.out.println("SECOND LIST: " + a2.toString());
-		System.out.println("Index of a2: " + a.indexOfSubList(a2) + "\n");
+		System.out.println("Index of second list: " + a.indexOfSubList(a2) + "\n");
 		
 		a2.clear();
 		a2.add(2);
@@ -46,26 +46,26 @@ public class Client {
 		a2.add(7);
 		System.out.println("ORIGINAL LIST: " + a);
 		System.out.println("SECOND LIST: " + a2.toString());
-		System.out.println("Index of a2: " + a.indexOfSubList(a2) + "\n");
+		System.out.println("Index of second list: " + a.indexOfSubList(a2) + "\n");
 
-		// EXERCISE 5 TEST
+		// EXERCISE 5 TESTS
 		System.out.println("***EXERCISE 5: runningTotal() test:");
 		System.out.println("Original list: " + a);
 		ArrayListPlus<Integer> a5 = a.runningTotal();
 		System.out.println("Running total of original list: " + a5 + "\n");
 
-		// EXERCISE 8 TEST
+		// EXERCISE 8 TESTS
 		System.out.println("***EXERCISE 8: count() test:");
 		System.out.println(a);
 		System.out.println("Number of 18's in list: " + a.count(18));
 		System.out.println("Number of 0's in list: " + a.count(0) + "\n");
 
-		// EXERCISE 11 TEST
+		// EXERCISE 11 TESTS
 		System.out.println("***EXERCISE 11: removeLast() test:");
 		System.out.println(a);
 		while (a.size() > 0) {
 			int num = a.removeLast();
-			System.out.println("Removed: " + num);
+			System.out.println("Removing: " + num);
 			System.out.println(a);
 		}
 	}
