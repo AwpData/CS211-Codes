@@ -4,6 +4,7 @@
 // Reason: Generic list interface implemented into ArrayListPlus with must have methods
 
 // Generic List interface for ArrayListPlus
+// Not needed for HW05 turn-in
 
 public interface List<E> {
 	public void add(E value);
