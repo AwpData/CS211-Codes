@@ -1,3 +1,9 @@
+/* Name: Trevor Tang
+ * Course: CS 211
+ * Date: October 27, 2019
+ * Reason: LinkedIntList class used to provide creation of LinkedIntLists and showcase exercise methods from book 
+ */
+
 // Class LinkedIntList can be used to store a list of integers.
 
 public class LinkedIntList implements IntList {
@@ -8,7 +14,7 @@ public class LinkedIntList implements IntList {
 		front = null;
 	}
 
-	private class ListNode { // INNER CLASS
+	private class ListNode { // Inner class ListNode
 		public int data; // data stored in this node
 		public ListNode next; // link to next node in the list
 
@@ -126,13 +132,13 @@ public class LinkedIntList implements IntList {
 	public void switchPairs() {
 		ListNode current = front;
 		while (current != null) {
-			if (current.next == null) {
+			if (current.next == null) { // Stops when there is a null reference to current.next (this checks for a lone number at the end too)
 				break;
 			} else {
-				int temp = current.data;
-				current.data = current.next.data;
-				current.next.data = temp;
-				current = (current.next).next; // Skips over the next value because they just swapped numbers
+				int temp = current.data; // Sets temp num to be the current nodes number
+				current.data = current.next.data; // Sets this number then to be the next number
+				current.next.data = temp; // Then it sets the number after (its partner) to be the temp number we stored. At this point they swapped
+				current = (current.next).next; // Skips over the next value because they just swapped numbers and moves on to the next pair
 			}
 		}
 	}
@@ -140,8 +146,8 @@ public class LinkedIntList implements IntList {
 	// CHAPTER 16 EXERCISE 12
 	public void split() {
 		ListNode current = front;
-		ListNode tempNode = null;
-		if (front == null) {
+		ListNode tempNode = null; // tempNode is used to hold the reference to the number after the negative so it isn't lost
+		if (front == null) { // if list is empty do nothing
 			return;
 		}
 		while (current.next != null) {
