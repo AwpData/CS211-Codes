@@ -1,8 +1,4 @@
-
 import java.util.Arrays;
-
-// Need to test:
-// Just keep testing 
 
 public class Client {
 	public static void main(String[] args) {
@@ -62,7 +58,7 @@ public class Client {
 		tree4.add(16);
 		tree4.add(2);
 		tree4.add(14);
-		
+
 		SearchTree<Integer> addingTree = new SearchTree<>();
 		addingTree.add(7);
 		addingTree.add(8);
