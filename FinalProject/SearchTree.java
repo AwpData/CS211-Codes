@@ -159,10 +159,10 @@ public class SearchTree<E> implements Comparable<E> {
 		for (int i = 0; i < array.length; i++) {
 			if (array[i].equals(o)) { // If this element equals the element we want to remove
 				swap(array, i, 0); // Initially brings the removed value to the top of the tree to be removed by swapping it with the top value
-				Object[] adjustedArray = Arrays.copyOf(array, array.length - 1); // Makes a copy of the tree with length - 1 which removes the value
+				Object[] adjustedArray = Arrays.copyOf(array, array.length - 1); // Makes a copy of the tree with length - 1
 
 				for (int j = 0; j < adjustedArray.length; j++) {
-					adjustedArray[j] = array[j + 1]; // Then it adjusts the array by getting every value after the removed value and adding it
+					adjustedArray[j] = array[j + 1]; // Then it adjusts the array by getting every value after the removed value and adding it to the adjusted array
 				}
 
 				if (i != 0) { // Then if the value removed wasn't the top value it will swap the value we swapped earlier back to the top
@@ -170,7 +170,7 @@ public class SearchTree<E> implements Comparable<E> {
 				}
 
 				if (adjustedArray.length > 0) { // If the new array has a length greater than 0
-					overallRoot = new TreeNode((E) adjustedArray[0]); // Set the tree to first equal to the top value
+					overallRoot = new TreeNode((E) adjustedArray[0]); // Set the tree to first equal the top value
 					for (int k = 1; k < array.length; k++) { // Then we just add each element back from the original array minus the removed element
 						this.add((Comparable<E>) array[k]); // Restores the original tree order with the given element removed
 					}
@@ -179,7 +179,7 @@ public class SearchTree<E> implements Comparable<E> {
 
 				} else { // If there is nothing left in the array then set the tree to null
 					this.array = this.toArray(); // Updates our array
-					overallRoot = null; // There is nothing there anymore so set it to null
+					overallRoot = null; // There is nothing there anymore so set our tree to null
 					return true;
 				}
 			}
