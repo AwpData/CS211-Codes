@@ -7,7 +7,7 @@ import java.util.Arrays;
 public class SearchTree<E> implements Comparable<E> {
 	private TreeNode overallRoot;
 	private Object[] array;
-	
+
 	// post: constructs an empty tree
 	public SearchTree() {
 		overallRoot = null;
@@ -123,33 +123,34 @@ public class SearchTree<E> implements Comparable<E> {
 
 	private void addAll(TreeNode root) {
 		if (root != null) {
-			this.add((Comparable<E>) root.data);
+			this.add((Comparable<E>) root.data); // add this root data to our tree
+			// Then traverse the left and right roots, adding those data values unless the root is null
 			addAll(root.left);
 			addAll(root.right);
 		}
 	}
 
-	public void clear() {
+	public void clear() { // Clears the tree by setting the parent to null
 		this.overallRoot = null;
 	}
 
 	public boolean containsAll(SearchTree<E> tree) {
 		Object[] array = tree.toArray();
 		for (int i = 0; i < array.length; i++) {
-			if (!this.contains((Comparable<E>) array[i])) {
-				return false;
+			if (!this.contains((Comparable<E>) array[i])) { // If there is one element that isn't found in the parameter tree from this tree
+				return false; // Exit method early since we know that this tree does not contain all elements from the parameter tree
 			}
 		}
 		return true;
 	}
 
-	public boolean isEmpty() {
+	public boolean isEmpty() { // Returns true if overallRoot is null
 		return overallRoot == null;
 	}
 
 	// Pre: overallRoot != null
 	// Post: Tree has object o removed from it, returns true if it found that object in tree, false otherwise
-	public boolean remove(Object o) { // A pretty creative remove method
+	public boolean remove(Object o) { // A creative remove method
 		if (overallRoot == null) { // Checks to make sure there is a value in the tree
 			throw new IllegalArgumentException("No values in tree");
 		}
@@ -186,7 +187,7 @@ public class SearchTree<E> implements Comparable<E> {
 		return false; // returns false if value is not found in array
 	}
 
-	private void swap(Object[] array, int indexOldValue, int indexNewValue) {
+	private void swap(Object[] array, int indexOldValue, int indexNewValue) { // Swap helper method for remove method
 		Object temp = array[indexOldValue];
 		array[indexOldValue] = array[indexNewValue];
 		array[indexNewValue] = temp;
@@ -195,9 +196,9 @@ public class SearchTree<E> implements Comparable<E> {
 
 	public void removeAll(SearchTree<E> tree) {
 		Object[] array = tree.toArray();
-		for (Object o : array) {
-			if (this.contains((Comparable<E>) o)) {
-				this.remove(o);
+		for (Object o : array) { // for each object in the parameter tree
+			if (this.contains((Comparable<E>) o)) { // If this tree contains that element
+				this.remove(o); // remove that element
 			}
 		}
 	}
@@ -205,8 +206,8 @@ public class SearchTree<E> implements Comparable<E> {
 	public void retainAll(SearchTree<E> tree) {
 		Object[] thisArray = this.toArray();
 		for (int i = 0; i < thisArray.length; i++) {
-			if (!tree.contains((Comparable<E>) thisArray[i])) {
-				this.remove(thisArray[i]);
+			if (!tree.contains((Comparable<E>) thisArray[i])) { // If the parameter tree does not contain this element in this tree
+				this.remove(thisArray[i]); // remove that element from this tree so that only the parameter tree's elements remain
 			}
 		}
 	}
@@ -220,20 +221,22 @@ public class SearchTree<E> implements Comparable<E> {
 			while (array[index] != null) { // Keeps looking for an empty spot in the array
 				index++;
 			}
-			array[index] = root.data;
-			index++;
+			array[index] = root.data; // Then set that empty spot to our data point
+			index++; // Increase index to next spot
+			// Then traverse left root before right root to get array in an inorder traversal
 			toArray(root.left, index, array);
 			toArray(root.right, index, array);
 			return array;
 		}
-		return null;
+		return null; // returns null if there is nothing in the tree or this element is null
 	}
 
+	// Post: returns an array with an inorder traversal of the tree's elements, "[]" if the tree is empty
 	public String toString() { // Helper Method to print an array in an inorder traversal to represent the binary tree
 		Object[] array = this.toArray();
 		String s = "[";
 		if (array != null && array.length > 0) {
-			s = "[" + array[0];
+			s = "[" + array[0]; // Fixes fencepost bug
 			for (int i = 1; i < array.length; i++) {
 				if (array[i] == null) {
 					break;
