@@ -21,8 +21,9 @@ public class Client {
 		System.out.println("Tree array: " + Arrays.deepToString(array));
 
 		System.out.println("\n--------- remove() Test ------------\n");
-		System.out.println("tree before removing any elements: " + tree);
-		System.out.println("Trying to remove 3. Success?: " + tree.remove(3));
+		System.out.println("tree before removing any elements: " + tree + "\n");
+		tree.printSideways();
+		System.out.println("\nTrying to remove 3. Success?: " + tree.remove(3));
 		System.out.println("Trying to remove 5. Success?: " + tree.remove(5));
 		System.out.println("Trying to remove 10. Success?: " + tree.remove(10));
 		System.out.println("tree after remove methods called: " + tree + "\n");
