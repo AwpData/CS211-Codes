@@ -1,8 +1,11 @@
-import java.util.Arrays;
 
-// This class stores int values in a binary search tree.
-// Duplicates are allowed.  Each node of the tree has the binary
-// search tree property.
+/* Name: Trevor Tang
+ * Course: CS 211
+ * Date: December 1, 2019
+ * Reason: SearchTree class modified with all methods stated in Chapter 17, Project #4
+ */
+
+import java.util.Arrays;
 
 public class SearchTree<E> implements Comparable<E> {
 	private TreeNode overallRoot;
@@ -114,7 +117,7 @@ public class SearchTree<E> implements Comparable<E> {
 		}
 	}
 
-	// Added methods below
+	// PROJECT METHODS BELOW HERE //
 
 	public void addAll(SearchTree<E> tree) {
 		addAll(tree.overallRoot);
@@ -139,6 +142,24 @@ public class SearchTree<E> implements Comparable<E> {
 		for (int i = 0; i < array.length; i++) {
 			if (!this.contains((Comparable<E>) array[i])) { // If there is one element that isn't found in the parameter tree from this tree
 				return false; // Exit method early since we know that this tree does not contain all elements from the parameter tree
+			}
+		}
+		return true;
+	}
+
+	public boolean equals(Object o) {
+		if (o.getClass() != this.getClass()) { // If the object's class is not the same as a SearchTree class
+			return false;
+		} else {
+			return this.equals((SearchTree<E>) o);
+		}
+	}
+
+	private boolean equals(SearchTree<E> tree) {
+		Object[] thisArray = this.toArray();
+		for (int i = 0; i < thisArray.length; i++) {
+			if (!tree.contains((Comparable<E>) thisArray[i])) { // If one element is not in the paramatized tree return false
+				return false;
 			}
 		}
 		return true;
@@ -230,6 +251,10 @@ public class SearchTree<E> implements Comparable<E> {
 		}
 		return null; // returns null if there is nothing in the tree or this element is null
 	}
+
+	// END OF PROJECT METHODS //
+
+	// BEGINNING OF EXTRA HELPER METHODS //
 
 	// Post: returns an array with an inorder traversal of the tree's elements, "[]" if the tree is empty
 	public String toString() { // Helper Method to print an array in an inorder traversal to represent the binary tree
