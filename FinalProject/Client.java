@@ -1,3 +1,10 @@
+
+/* Name: Trevor Tang
+ * Course: CS 211
+ * Date: December 1, 2019
+ * Reason: Client code to showcase all methods in Chapter 17, Project #4 on page 1070
+ */
+
 import java.util.Arrays;
 
 public class Client {
@@ -79,6 +86,17 @@ public class Client {
 		tree3.addAll(addingTree);
 		System.out.println("tree3 after addAll: " + tree3 + "\n");
 		tree3.printSideways();
+
+		System.out.println("---------- equals() test ----------\n");
+		SearchTree<Integer> equalTree = new SearchTree<>();
+		equalTree.add(1);
+		equalTree.add(16);
+		equalTree.add(2);
+		equalTree.add(14);
+
+		System.out.println("equalTree: " + equalTree);
+		System.out.println("tree4: " + tree4);
+		System.out.println("Is equalTree equal to tree4?: " + equalTree.equals(tree4));
 
 		SearchTree<String> tree5 = new SearchTree<>();
 		tree5.add("Homer");
